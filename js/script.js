@@ -1,63 +1,58 @@
+let body = document.body
 let container = document.createElement('div')
-let header = document.createElement('header')
-let header__div = document.createElement('div')
-let haeder__top__left = document.createElement('div')
-let haeder__top__left__nav = document.createElement('nav')
-let haeder__top__ul = document.createElement('ul')
-let liOne = document.createElement('li')
-let liTwo = document.createElement('li')
-let liThree = document.createElement('li')
-let aOne = document.createElement('a')
-let aTwo = document.createElement('a')
-let aThree = document.createElement('a')
-let haeder__top__right = document.createElement('div')
-let haeder__top__right__nav = document.createElement('nav')
-let haeder__top__ulONe = document.createElement('ul')
-let liFour = document.createElement('li')
-let liFive = document.createElement('li')
-let liSix = document.createElement('li')
-let aFour = document.createElement('a')
-let aFive = document.createElement('a')
-let aSix = document.createElement('a')
-let phone = document.createElement('div')
-let imgOne = document.createElement('img')
-let liSeven = document.createElement('li')
-let aSeven = document.createElement('a')
-let headerClass = document.createElement('div')
-let header__logo = document.createElement('div')
-let h1 = document.createElement('h1')
-let aEight = document.createElement('a')
-let field__section = document.createElement('div')
-let btnOne = document.createElement('button')
-let imgTwo = document.createElement('img')
-let form = document.createElement('form')
-let input = document.createElement('input')
-let field__section__btn = document.createElement('button')
-let categories = document.createElement('div')
-let status = document.createElement('div')
-let profile = document.createElement('div')
-let sprite = document.createElement('div')
-let heart = document.createElement('div')
-let shop = document.createElement('div')
-let statusImg = document.createElement('img')
-let profileImg = document.createElement('img')
-let spriteImg = document.createElement('img')
-let heartImg = document.createElement('img')
-let shopImg = document.createElement('img')
-let statusPar = document.createElement('p')
-let profilePar = document.createElement('p')
-let spritePar = document.createElement('p')
-let heartPar = document.createElement('p')
-let shopPar = document.createElement('p')
+let section = document.createElement('section')
+let prod = document.createElement('div')
+let prod__btn = document.createElement('button')
+let ptod__img = document.createElement('img')
+let prod_type = document.createElementNS('p')
+let prod__price__wrapper = document.createElement('div')
+let prod__price = document.createElement('span')
+let prod__sale__price = document.createElement('s')
+let buy = document.createElement('div')
+let buy_btn = document.createElement('button')
+let prod__btn__img = document.createElement('img')
 
 
-container.append(header)
-header.append(haeder__top__left, haeder__top__right)
-haeder__top__left.append(haeder__top__left__nav)
-haeder__top__left__nav.append(haeder__top__ul)
-haeder__top__ul.append(liOne, liTwo, liThree)
-liOne.append(aOne)
-liTwo.append(aTwo)
-liThree.append(aThree)
+let products = [
+    {
+        img: './assets/img/phone.webp',
+        type: 'Смартфон Xiaomi 12T 256Gb Black',
+        price: '44 999 ₽',
+        salePrice: '50 999 ₽',
+    }
+]
 
-aOne.innerHTML = 'Магазины'
+prod__btn.innerHTML = "Скидки и рассрочка"
+prod_type.innerHTML = products.forEach(pr => {
+    pr.type
+})
+ptod__img.innerHTML = products.forEach(pr => {
+    pr.img
+})
+prod__price.innerHTML = products.forEach(pr => {
+    pr.price
+})
+prod__sale__price.innerHTML = products.forEach(pr => {
+    pr.salePrice
+})
+
+
+body.append(container)
+container.append(section)
+section.append(prod)
+prod.append(prod__btn, ptod__img, prod_type, prod__price__wrapper, buy)
+prod__price__wrapper.append(prod__price, prod__sale__price)
+buy.append(buy_btn)
+buy_btn.append(prod__btn__img)
+
+section.classList.add('products')
+prod.classList.add('prod')
+prod__btn.classList('prod__btn')
+prod__price__wrapper.classList.add(prod__price__wrapper)
+prod__price.classList.add('prod__price')
+prod__sale__price.classList.add('prod__sale-price')
+buy.classList.add('buy')
+buy_btn.classList.add('prod__buy')
+
+
+
